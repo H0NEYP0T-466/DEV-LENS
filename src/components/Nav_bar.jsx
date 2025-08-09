@@ -14,7 +14,6 @@ const Nav_bar = () => {
     ease: "expo.out", 
   });
 };
-
 const handleLeave = () => {
   gsap.to(navBottomRef.current, {
     height: "0vw",
