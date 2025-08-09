@@ -17,7 +17,7 @@
 
 ## 🚀 Live Demo
 
-[View Live Site](https://your-dev-lens-live-site-url.com/)
+[View Live Site](https://dev-lens-mu.vercel.app/)
 
 ---
 
