@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![GitHub License]()
+![GitHub License](https://img.shields.io/github/license/H0NEYP0T-466/DEV-LENS?style=for-the-badge&color=brightgreen)
 ![GitHub Stars](https://img.shields.io/github/stars/H0NEYP0T-466/DEV-LENS?style=for-the-badge&color=yellow)
 ![GitHub Forks](https://img.shields.io/github/forks/H0NEYP0T-466/DEV-LENS?style=for-the-badge&color=blue)
 ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge)
