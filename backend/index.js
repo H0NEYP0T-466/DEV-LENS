@@ -4,7 +4,11 @@ app.use(express.json());
 require("dotenv").config();
 const cors = require('cors');
 const generateRES = require('./controller/controller.js');
-app.use(cors());
+app.use(cors({
+  origin: "https://dev-lens-mu.vercel.app", 
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 
 app.post('/reveiw',generateRES);
 
