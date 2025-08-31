@@ -4,57 +4,51 @@ require('dotenv').config();
 
 const app = express();
 
-// Allow only your frontend origin
+// The only origin that must be allowed (your Vercel frontend)
 const FRONTEND_ORIGIN = 'https://dev-lens-mu.vercel.app';
 
-// CORS: add ACAO/ACAC headers and auto-handle preflight
+// CORS config: add ACAO/ACAC on simple requests and preflight
 const corsOptions = {
-  origin: FRONTEND_ORIGIN,                  // exact origin for Vercel app
-  methods: ['GET', 'POST', 'OPTIONS'],      // allow these methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // allow these headers
-  credentials: true,                        // include Access-Control-Allow-Credentials
-  optionsSuccessStatus: 204,                // 204 is standard for preflight
+  origin: FRONTEND_ORIGIN,                      // reflect exact origin
+  methods: ['GET', 'POST', 'OPTIONS'],          // allow these methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // headers frontend sends
+  credentials: true,                            // if you ever use cookies/auth headers
+  optionsSuccessStatus: 204,                    // 204 is standard for preflight
 };
-app.use(cors(corsOptions));                 // must be before routes
 
-// If any OPTIONS slips through (Express 5 + routers), answer it here.
-// No wildcard route patterns (like "*") to avoid path-to-regexp errors.
-app.use((req, res, next) => {
-  if (req.method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Origin', FRONTEND_ORIGIN);
-    res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    return res.sendStatus(204);
-  }
-  next();
-});
+// 1) Register CORS before routes
+app.use(cors(corsOptions));
 
-app.use(express.json());                    // parse JSON bodies
+// 2) Explicitly respond to preflight for the route you call
+//    Avoid wildcard patterns in Express 5 (path-to-regexp throws).
+app.options('/review', cors(corsOptions));
 
-// Simple request log to see what actually hits the server
+// 3) Body parser
+app.use(express.json());
+
+// 4) Minimal request logger (helps you confirm path/method)
 app.use((req, _res, next) => {
-  console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`);
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} origin=${req.headers.origin || '-'}`);
   next();
 });
 
-// Health check (for Railway)
+// 5) Health check for Railway
 app.get('/health', (_req, res) => res.status(200).send('OK'));
 
-// Optional GET /review to verify routing in a browser
+// 6) Optional GET /review to test in a browser tab
 app.get('/review', (_req, res) => {
   res.status(200).json({ ok: true, info: 'Use POST /review from the frontend' });
 });
 
-// POST /review — make sure controller exports a function (req, res) => { ... }
-const generateRES = require('./controller/controller.js');
+// 7) Actual API route: POST /review
+const generateRES = require('./controller/controller.js'); // must export (req,res)=>{}
 app.post('/review', generateRES);
 
-// 404 fallback
+// 8) 404 for anything else
 app.use((req, res) => res.status(404).json({ error: 'Not Found' }));
 
-// Start server on Railway PORT
-const PORT = process.env.PORT || 8000;
+// 9) Start server on Railway’s PORT
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}. CORS origin: ${FRONTEND_ORIGIN}`);
 });
