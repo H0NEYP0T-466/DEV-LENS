@@ -12,7 +12,7 @@ const CodeReviewComponent = () => {
 
 const handleReviewCode = () => {
   setIsLoading(true);
-  axios.post('http://localhost:8000/reveiw', {  
+  axios.post('https://dev-lens-production.up.railway.app/review', {  
     prompt: code
   })
   .then((res) => {
@@ -24,6 +24,7 @@ const handleReviewCode = () => {
     setIsLoading(false);
   });
 };
+
 
 
   return (
