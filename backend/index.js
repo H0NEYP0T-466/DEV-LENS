@@ -22,9 +22,7 @@ const corsOptions = {
 // Apply CORS to all requests
 app.use(cors(corsOptions));
 
-// Explicitly handle all preflight requests so they don’t 404
-app.options('*', cors(corsOptions));
-
+app.options(/.*/, cors(corsOptions));
 // Parse JSON bodies after CORS (so preflight OPTIONS is handled first)
 app.use(express.json());
 
