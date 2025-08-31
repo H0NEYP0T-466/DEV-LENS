@@ -32,7 +32,11 @@ app.use(express.json());
 app.get('/health', (req, res) => res.status(200).send('OK'));
 
 // Your API route (POST /review)
-app.post('/review', generateRES);
+app.post("/review", (req, res, next) => {
+  console.log("🚀 /review hit with body:", req.body);
+  next();
+}, generateRES);
+
 
 // Optional: basic 404 for unmatched routes (after all routes)
 app.use((req, res) => res.status(404).json({ error: 'Not Found' }));
