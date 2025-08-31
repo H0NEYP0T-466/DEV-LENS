@@ -1,6 +1,4 @@
-# 🔍 DEV-LENS
-
-<div align="center">
+# DEV-LENS
 
 ![GitHub License](https://img.shields.io/github/license/H0NEYP0T-466/DEV-LENS?style=for-the-badge&color=brightgreen)
 ![GitHub Stars](https://img.shields.io/github/stars/H0NEYP0T-466/DEV-LENS?style=for-the-badge&color=yellow)
@@ -8,40 +6,71 @@
 ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge)
 ![GitHub Issues](https://img.shields.io/github/issues/H0NEYP0T-466/DEV-LENS?style=for-the-badge&color=red)
 
-</div>
+A cutting-edge AI-powered code review platform that revolutionizes the way developers analyze, optimize, and improve their code. Built with modern web technologies and powered by Google's Gemini AI, DEV-LENS provides intelligent code analysis, error detection, and automated suggestions to enhance code quality and developer productivity.
 
-**DEV-LENS** is a cutting-edge AI-powered code review platform 🚀 that revolutionizes the way developers analyze, optimize, and improve their code. Built with modern web technologies and powered by Google's Gemini AI, DEV-LENS provides intelligent code analysis, error detection, and automated suggestions to enhance code quality and developer productivity.
+• [🚀 Live Demo](https://dev-lens-mu.vercel.app/)
+• [📖 Documentation](#table-of-contents)
+• [🐛 Report Issue](https://github.com/H0NEYP0T-466/DEV-LENS/issues)
+• [🤝 Contribute](#-contributing)
 
-<div align="center">
+## Table of Contents
 
-[🚀 Live Demo](https://dev-lens-mu.vercel.app/) • [📖 Documentation](#-table-of-contents) • [🤝 Contributing](#-contributing) • [🐛 Report Bug](https://github.com/H0NEYP0T-466/DEV-LENS/issues)
-
-</div>
-
----
-
-## 📚 Table of Contents
-
-- [🔧 Installation](#-installation)
-- [🎯 Usage](#-usage)
 - [✨ Features](#-features)
-- [📂 Folder Structure](#-folder-structure)
+- [🧰 Tech Stack](#-tech-stack)
+- [🚀 Installation](#-installation)
+- [🧪 Usage](#-usage)
+- [🗂 Project Structure](#-project-structure)
+- [🗺 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
-- [📜 License](#-license)
-- [🗺️ Roadmap](#️-roadmap)
+- [📄 License](#-license)
 - [🙏 Acknowledgements](#-acknowledgements)
 
----
+## ✨ Features
 
-## 🔧 Installation
+- **🤖 AI-Powered Analysis**: Leverages Google's Gemini AI for intelligent code review and analysis
+- **🔍 Multi-Language Support**: Supports JavaScript, Python, Java, C++, and more programming languages
+- **⚡ Real-time Feedback**: Instant code analysis and suggestions as you paste your code
+- **🐛 Bug Detection**: Identifies logical errors, potential runtime issues, and code smells
+- **🔒 Security Analysis**: Highlights security vulnerabilities and unsafe coding practices
+- **📈 Performance Optimization**: Spots inefficient patterns and suggests performance improvements
+- **🎨 Modern UI**: Clean, responsive interface that works on desktop and mobile devices
+- **📋 Copy-Friendly Output**: Easy-to-copy suggestions and formatted recommendations
+- **🚀 Fast Processing**: Optimized for quick analysis and response times
+- **📚 Best Practices**: Enforces coding standards and industry best practices
+
+## 🧰 Tech Stack
+
+### Languages
+![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+### Frameworks/Libraries
+![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Express.js](https://img.shields.io/badge/Express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/Vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+
+### Cloud/AI Services
+![Google AI](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+
+### Tools/Utilities
+![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-%23000000.svg?style=for-the-badge&logo=greensock&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-%235A29E4.svg?style=for-the-badge&logo=axios&logoColor=white)
+
+## 🚀 Installation
 
 ### Prerequisites
 
 - **Node.js** (v16.0.0 or higher)
-- **npm** or **yarn** package manager
+- **npm** package manager
 - **Git** for version control
+- **Google Gemini API Key** (for AI functionality)
 
-### Quick Start
+### Steps
 
 1. **Clone the repository**
    ```bash
@@ -82,85 +111,44 @@
    - Frontend: `http://localhost:5173`
    - Backend API: `http://localhost:8000`
 
----
+## 🧪 Usage
 
-## 🎯 Usage
+### UI Usage
 
-### Basic Code Review Workflow
-
-1. **Launch the Application**
-   - Navigate to the DEV-LENS interface
-   - You'll see a clean, intuitive code review dashboard
-
-2. **Submit Your Code**
-   ```javascript
-   // Example: Paste your code in the input area
-   function calculateSum(a, b) {
-     return a + b;
-   }
-   ```
-
-3. **Get AI-Powered Analysis**
-   - Click "Review Code" to trigger AI analysis
-   - Receive comprehensive feedback including:
-     - ✅ Code quality assessment
-     - ❌ Bug detection and fixes
-     - ⚠️ Performance optimization suggestions
-     - 🔧 Best practice recommendations
-
-4. **Review and Implement**
-   - Review the AI-generated suggestions
-   - Apply recommended improvements
-   - Iterate and refine your code
+1. **Navigate to the application** at `http://localhost:5173`
+2. **Paste your code** into the text area on the main page
+3. **Click "Review Code"** to get AI-powered analysis
+4. **Review the feedback** including bugs, optimizations, and security suggestions
+5. **Copy and implement** the suggested improvements
 
 ### API Usage
 
-```javascript
-// Example API call for code review
-const response = await fetch('http://localhost:8000/reveiw', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    prompt: 'Your code here...'
-  })
-});
+**Base URL**: `http://localhost:8000`
 
-const analysis = await response.json();
-console.log(analysis);
+**Endpoint**: `POST /reveiw`
+
+**Request Body**:
+```json
+{
+  "code": "your code here"
+}
 ```
 
----
+**Example Request**:
+```bash
+curl -X POST http://localhost:8000/reveiw \
+  -H "Content-Type: application/json" \
+  -d '{"code": "function add(a, b) { return a + b; }"}'
+```
 
-## ✨ Features
+**Response**:
+```json
+{
+  "analysis": "AI-generated code review and suggestions"
+}
+```
 
-### 🤖 AI-Powered Analysis
-- **Smart Code Review**: Leverages Google Gemini AI for intelligent code analysis
-- **Multi-Language Support**: Supports JavaScript, Python, Java, C++, HTML, CSS, and more
-- **Real-time Feedback**: Instant code analysis and suggestions
-
-### 🔍 Comprehensive Detection
-- **Bug Detection**: Identifies logical errors, syntax issues, and potential runtime problems
-- **Security Analysis**: Flags security vulnerabilities and unsafe practices
-- **Performance Optimization**: Suggests improvements for better code efficiency
-- **Best Practices**: Enforces coding standards and conventions
-
-### 🎨 User Experience
-- **Intuitive Interface**: Clean, responsive design for seamless interaction
-- **Real-time Rendering**: Markdown-based response rendering for clear feedback
-- **Multi-Panel Layout**: Side-by-side code input and analysis output
-- **Loading States**: Visual feedback during analysis processing
-
-### 🛠️ Technical Excellence
-- **Modern Tech Stack**: Built with React, Node.js, Express, and Vite
-- **API Integration**: Seamless Google Gemini AI integration
-- **Responsive Design**: Works perfectly on desktop and mobile devices
-- **Error Handling**: Robust error management and user feedback
-
----
-
-## 📂 Folder Structure
+## 🗂 Project Structure
 
 ```
 DEV-LENS/
@@ -175,6 +163,8 @@ DEV-LENS/
 │   ├── index.js                 # Express server entry point
 │   ├── package.json             # Backend dependencies
 │   └── package-lock.json
+├── 📁 docs/                      # Documentation files
+│   └── documentation-generator-prompt.md
 ├── 📁 public/                    # Static assets
 │   ├── favi.jpg                 # Favicon
 │   └── vite.svg
@@ -191,6 +181,7 @@ DEV-LENS/
 │   ├── index.css                # Global styles
 │   └── main.jsx                 # Application entry point
 ├── .gitignore                   # Git ignore rules
+├── LICENSE                      # MIT License
 ├── README.md                    # Project documentation
 ├── eslint.config.js             # ESLint configuration
 ├── index.html                   # HTML template
@@ -199,143 +190,46 @@ DEV-LENS/
 └── vite.config.js              # Vite build configuration
 ```
 
----
+## 🗺 Roadmap
+
+### Current
+- ✅ AI-powered code review using Google Gemini
+- ✅ Multi-language support
+- ✅ Responsive web interface
+- ✅ Real-time code analysis
+
+### Planned
+- 🔄 Integration with popular IDEs (VS Code, JetBrains)
+- 🔄 Support for additional AI models (OpenAI, Claude)
+- 🔄 Code diff visualization
+- 🔄 Team collaboration features
+- 🔄 Performance metrics dashboard
+
+### Future Vision
+- 🌟 GitHub/GitLab integration for PR reviews
+- 🌟 Custom rule configuration
+- 🌟 Code quality scoring system
+- 🌟 Advanced security vulnerability scanning
+- 🌟 Machine learning model training on team codebases
 
 ## 🤝 Contributing
 
-We welcome contributions from developers of all skill levels! 🌟 Here's how you can help make DEV-LENS even better:
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests, report issues, and contribute to the project.
 
-### 🚀 Getting Started
+## 📄 License
 
-1. **Fork the repository** on GitHub
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Make your changes** and test thoroughly
-4. **Commit your changes**: `git commit -m 'Add amazing feature'`
-5. **Push to the branch**: `git push origin feature/amazing-feature`
-6. **Open a Pull Request** with a detailed description
-
-### 📋 Contribution Guidelines
-
-- 🐛 **Bug Reports**: Use the issue template to report bugs
-- 💡 **Feature Requests**: Propose new features through issues
-- 📝 **Code Style**: Follow the existing code style and ESLint rules
-- ✅ **Testing**: Ensure your changes don't break existing functionality
-- 📖 **Documentation**: Update documentation for new features
-
-### 🔧 Development Setup
-
-```bash
-# Install dependencies
-npm install
-cd backend && npm install
-
-# Run development servers
-npm run dev          # Frontend
-cd backend && npm start  # Backend
-
-# Run linting
-npm run lint
-
-# Build for production
-npm run build
-```
-
-### 🎯 Areas for Contribution
-
-- 🔧 Backend API improvements
-- 🎨 UI/UX enhancements
-- 🤖 AI model optimization
-- 📱 Mobile responsiveness
-- 🔒 Security enhancements
-- 📚 Documentation improvements
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License** - see the full license below:
-
-```
-MIT License
-
-Copyright (c) 2024 H0NEYP0T-466
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
----
-
-## 🗺️ Roadmap
-
-### 🎯 Current Phase (v1.0)
-- [x] ✅ AI-powered code review engine
-- [x] ✅ React-based frontend interface
-- [x] ✅ Express.js backend API
-- [x] ✅ Google Gemini AI integration
-- [x] ✅ Multi-language code support
-
-### 🚀 Next Phase (v1.1)
-- [ ] 🔐 User authentication and profiles
-- [ ] 📊 Code review history and analytics
-- [ ] 🏷️ Code categorization and tagging
-- [ ] 📱 Progressive Web App (PWA) support
-- [ ] 🌙 Dark/light theme toggle
-
-### 🌟 Future Vision (v2.0)
-- [ ] ☁️ Cloud synchronization
-- [ ] 👥 Team collaboration features
-- [ ] 🔄 Version control integration
-- [ ] 📈 Advanced analytics dashboard
-- [ ] 🤖 Custom AI model training
-- [ ] 🔌 IDE plugin support
-
-### 🎮 Community Requests
-- [ ] 📚 Code snippet library
-- [ ] 🏆 Gamification elements
-- [ ] 🎓 Educational tutorials
-- [ ] 🌐 Internationalization (i18n)
-
----
+This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
 
 ## 🙏 Acknowledgements
 
-### 🤝 Special Thanks
+### Dependencies
+- **Google Gemini AI** - For providing powerful AI capabilities
+- **React** - For the robust frontend framework
+- **Vite** - For fast development and build tooling
+- **Express.js** - For the lightweight backend framework
+- **GSAP** - For smooth animations and interactions
 
-- **Google AI** for providing the powerful Gemini AI API
-- **React Team** for the amazing frontend framework
-- **Vite** for the lightning-fast build tool
-- **Express.js** for the robust backend framework
-- **Open Source Community** for inspiration and support
-
-### 🛠️ Built With
-
-- [React](https://reactjs.org/) - Frontend framework
-- [Node.js](https://nodejs.org/) - Backend runtime
-- [Express.js](https://expressjs.com/) - Web framework
-- [Google Gemini AI](https://ai.google.dev/) - AI integration
-- [Vite](https://vitejs.dev/) - Build tool
-- [Axios](https://axios-http.com/) - HTTP client
-- [React Router](https://reactrouter.com/) - Navigation
-- [GSAP](https://greensock.com/gsap/) - Animations
-
-### 🌟 Inspiration
-
+### Inspiration
 This project was inspired by the need for intelligent, accessible code review tools that help developers improve their skills and code quality through AI-powered assistance.
 
 ---
@@ -343,9 +237,5 @@ This project was inspired by the need for intelligent, accessible code review to
 <div align="center">
 
 **Made with ❤️ by [H0NEYP0T-466](https://github.com/H0NEYP0T-466)**
-
-⭐ Star this repository if you found it helpful!
-
-[🚀 Live Demo](https://dev-lens-mu.vercel.app/) • [📖 Documentation](#-table-of-contents) • [🤝 Contributing](#-contributing) • [🐛 Report Bug](https://github.com/H0NEYP0T-466/DEV-LENS/issues)
 
 </div>
