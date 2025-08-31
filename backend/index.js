@@ -1,56 +1,75 @@
+// index.js
 const express = require('express');
+const cors = require('cors');
 require('dotenv').config();
+const generateres=require('./controller/controller.js');
 
 const app = express();
-app.set('trust proxy', 1); // behind Railway proxy
+app.set('trust proxy', 1); // if behind Railway proxy
 
 // Your Vercel frontend origin
 const FRONTEND_ORIGIN = 'https://dev-lens-mu.vercel.app';
 
-// CORS: add headers to every response and handle preflight cleanly
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', FRONTEND_ORIGIN);        // allow your frontend
-  res.header('Vary', 'Origin');                                      // proper caching
-  res.header('Access-Control-Allow-Credentials', 'true');            // allow credentials if needed
-  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');    // allowed methods
-  res.header(
-    'Access-Control-Allow-Headers',
-    req.header('Access-Control-Request-Headers') || 'Content-Type, Authorization'
-  );
-  if (req.method === 'OPTIONS') return res.sendStatus(204);          // preflight response
-  next();
-});
+// --------------------
+// CORS Middleware
+// --------------------
+app.use(cors({
+  origin: FRONTEND_ORIGIN,
+  methods: ['GET','POST','OPTIONS'],
+  credentials: true
+}));
 
-app.use(express.json()); // JSON body parser
+// --------------------
+// JSON body parser
+// --------------------
+app.use(express.json());
 
-// Simple logger to see what hits the server
+// --------------------
+// Request Logger
+// --------------------
 app.use((req, _res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} origin=${req.headers.origin || '-'}`);
   next();
 });
 
-// Health check
-app.get('/health', (_req, res) => res.status(200).send('OK'));
+// --------------------
+// Health Check
+// --------------------
+app.get('/health', (_req, res) => res.status(200).send('Server is running!'));
 
-// Optional GET to verify path in a browser
+// --------------------
+// Optional GET for /review
+// --------------------
 app.get('/review', (_req, res) => {
   res.status(200).json({ ok: true, info: 'Use POST /review from the frontend' });
 });
 
-// POST /review — your controller must export (req, res) => { ... }
-const generateRES = require('./controller/controller.js');
+
+// --------------------
+// POST /review
+// --------------------
 app.post('/review', async (req, res) => {
   try {
     console.log('Request is received as:', req.body);
-    await generateRES(req, res);
+    await generateres(req, res);
   } catch (err) {
     console.error('POST /review error:', err);
     if (!res.headersSent) res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-// 404 fallback
+// --------------------
+// 404 Fallback
+// --------------------
 app.use((req, res) => res.status(404).json({ error: 'Not Found' }));
 
+// --------------------
+// Start Server
+// --------------------
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`Server running on ${PORT}. CORS origin: ${FRONTEND_ORIGIN}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}. CORS origin: ${FRONTEND_ORIGIN}`));
+
+// --------------------
+// Keep-alive log for Railway
+// --------------------
+setInterval(() => console.log("Server is alive"), 60000);
