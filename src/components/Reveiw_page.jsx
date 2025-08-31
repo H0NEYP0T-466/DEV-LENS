@@ -11,20 +11,18 @@ const CodeReviewComponent = () => {
 
 
 const handleReviewCode = () => {
-  console.log("Sending code:", code); // frontend log
   setIsLoading(true);
-  axios.post('https://dev-lens-production.up.railway.app/review', { prompt: code },
-    { withCredentials: true }
-  )
-    .then((res) => {
-      console.log("Backend response:", res.data); // frontend log
-      setAiResponse(res.data);
-      setIsLoading(false);
-    })
-    .catch((error) => {
-      console.error("Backend error:", error); // frontend log
-      setIsLoading(false);
-    });
+  axios.post('http://localhost:8000/reveiw', {  
+    prompt: code
+  })
+  .then((res) => {
+    setAiResponse(res.data);
+    setIsLoading(false);
+  })
+  .catch((error) => {
+    console.error(error);
+    setIsLoading(false);
+  });
 };
 
 
