@@ -48,15 +48,20 @@ app.get('/review', (_req, res) => {
 // --------------------
 // POST /review
 // --------------------
-app.post('/review', async (req, res) => {
-  try {
-    console.log('Request is received as:', req.body);
-    await generateres(req, res);
-  } catch (err) {
-    console.error('POST /review error:', err);
-    if (!res.headersSent) res.status(500).json({ error: 'Internal Server Error' });
-  }
+// app.post('/review', async (req, res) => {
+//   try {
+//     console.log('Request is received as:', req.body);
+//     await generateres(req, res);
+//   } catch (err) {
+//     console.error('POST /review error:', err);
+//     if (!res.headersSent) res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
+app.post('/review', (req, res) => {
+  console.log('Request is received as:', req.body);
+  res.json({ review: `Received: ${req.body.prompt || ''}` });
 });
+
 
 // --------------------
 // 404 Fallback
