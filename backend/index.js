@@ -5,10 +5,13 @@ require("dotenv").config();
 const cors = require('cors');
 const generateRES = require('./controller/controller.js');
 app.use(cors({
-  origin: "https://dev-lens-mu.vercel.app", 
-  methods: ["GET", "POST"],
+  origin: "https://dev-lens-mu.vercel.app",
+  methods: ["GET", "POST", "OPTIONS"],
   credentials: true
 }));
+app.options('*',cors())
+
+
 
 app.post('/review',generateRES);
 
