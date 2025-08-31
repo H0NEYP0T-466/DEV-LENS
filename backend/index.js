@@ -10,7 +10,7 @@ app.use(cors({
   credentials: true
 }));
 
-app.post('/reveiw',generateRES);
+app.post('/review',generateRES);
 
 
 
