@@ -41,6 +41,7 @@ app.get('/review', (_req, res) => {
 const generateRES = require('./controller/controller.js');
 app.post('/review', async (req, res) => {
   try {
+    console.log('Request is received as:', req.body);
     await generateRES(req, res);
   } catch (err) {
     console.error('POST /review error:', err);
